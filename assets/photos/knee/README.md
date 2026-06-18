@@ -1,27 +1,25 @@
-# Knee image assets expected by v39/knee.html
+# Knee photo assets for v40
 
-Drop generated images into this folder with these exact filenames:
+These files are optimized JPGs created from the knee images uploaded in this chat. They are referenced by `knee.html`.
 
-- knee-hero-havasu-walking.jpg
-- knee-mri-review-patient.jpg
-- mako-knee-replacement-or.jpg
-- knee-anatomy-labeled.jpg
-- ultrasound-guided-knee-injection.jpg
-- knee-arthroscopy-illustration.jpg
-- meniscus-repair-illustration.jpg
-- acl-reconstruction-athlete.jpg
-- mpfl-reconstruction-patella.jpg
-- tendon-repair-brace.jpg
-- knee-fracture-xray-review.jpg
+## Required image paths used by knee.html
 
-Optional future images:
-- pickleball-knee-pain.jpg
-- youth-athlete-acl-evaluation.jpg
-- bakers-cyst-posterior-knee.jpg
-- knee-effusion-exam.jpg
-- knee-bracing-unloader.jpg
-- golf-knee-arthritis.jpg
-- desert-trail-knee-pain.jpg
-- utv-knee-injury.jpg
-- boat-ladder-knee-injury.jpg
-- return-to-walking-after-tka.jpg
+- `assets/photos/knee/knee-hero-havasu-walking.jpg`
+- `assets/photos/knee/knee-mri-review-patient.jpg`
+- `assets/photos/knee/mako-knee-replacement-or.jpg`
+- `assets/photos/knee/knee-anatomy-labeled.jpg`
+- `assets/photos/knee/ultrasound-guided-knee-injection.jpg`
+- `assets/photos/knee/knee-arthroscopy-illustration.jpg`
+- `assets/photos/knee/meniscus-repair-illustration.jpg`
+- `assets/photos/knee/acl-reconstruction-athlete.jpg`
+- `assets/photos/knee/mpfl-reconstruction-patella.jpg`
+- `assets/photos/knee/tendon-repair-brace.jpg`
+- `assets/photos/knee/knee-fracture-xray-review.jpg`
+
+## Extra included image
+
+- `assets/photos/knee/mpfl-anatomy-landmarks.jpg` — included for future MPFL/patellar instability content. It is not currently referenced in `knee.html`.
+
+## Note on the fracture X-ray review image
+
+The uploaded image contained visible mock patient text and a nameplate artifact. I cropped the optimized website version to reduce that issue. Consider regenerating this image later with no mock PHI and no visible nameplate text.
