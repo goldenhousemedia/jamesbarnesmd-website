@@ -86,6 +86,25 @@
 @media(max-width:1100px){.knee-card-grid,.knee-procedure-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.knee-panels,.knee-lifestyle-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.knee-feature,.knee-feature.reverse{grid-template-columns:1fr!important}.knee-media img{height:340px!important}.knee-media.contain img{max-height:330px!important}}
 @media(max-width:700px){.knee-section{padding:42px 0!important}.knee-card-grid,.knee-procedure-grid,.knee-panels,.knee-lifestyle-grid{grid-template-columns:1fr!important}.knee-media img{height:260px!important}.knee-media.contain img{max-height:260px!important}.knee-procedure img{height:180px!important}.knee-cta{padding:22px!important}}
 
+
+/* v54 knee hero cleanup: compact the hero content, reduce dead space, and balance the text/photo columns. */
+.knee-hero{padding:46px 0 40px!important;}
+.knee-hero-grid{grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr)!important;gap:30px!important;align-items:center!important;}
+.knee-hero h1{font-size:clamp(2.55rem,5.1vw,4.85rem)!important;line-height:.94!important;margin:14px 0 16px!important;max-width:780px!important;}
+.knee-hero p{font-size:clamp(1rem,1.35vw,1.12rem)!important;line-height:1.48!important;max-width:720px!important;margin:0!important;}
+.knee-chip-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important;margin:18px 0 16px!important;}
+.knee-chip{display:block!important;padding:11px 10px!important;border-radius:16px!important;min-height:0!important;}
+.knee-chip span{width:30px!important;height:30px!important;border-radius:11px!important;margin-bottom:7px!important;}
+.knee-chip p{margin:0!important;}
+.knee-chip strong{font-size:.88rem!important;line-height:1.12!important;}
+.knee-chip em{font-size:.72rem!important;line-height:1.25!important;margin-top:4px!important;}
+.knee-hero .page-nav{margin-top:18px!important;gap:10px!important;}
+.knee-affiliation-note{margin-top:10px!important;font-size:.82rem!important;}
+.knee-slider{height:390px!important;min-height:390px!important;border-radius:30px!important;}
+.knee-slider figcaption{left:14px!important;right:14px!important;bottom:14px!important;padding:10px 12px!important;font-size:.9rem!important;}
+@media(max-width:1100px){.knee-hero-grid{grid-template-columns:1fr!important}.knee-chip-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.knee-slider{height:350px!important;min-height:350px!important}}
+@media(max-width:700px){.knee-hero{padding:36px 0 30px!important}.knee-hero h1{font-size:2.75rem!important}.knee-chip-grid{grid-template-columns:1fr 1fr!important}.knee-chip em{display:none!important}.knee-slider{height:285px!important;min-height:285px!important}.knee-hero .page-nav .btn{width:100%!important}}
+
 </style>
 </head>
 <body class="knee-page">
@@ -95,7 +114,7 @@
     <div>
       <div class="eyebrow">Lake Havasu City Knee Care</div>
       <h1>Knee Pain, Sports Injuries & Robotic Knee Replacement</h1>
-      <p>Knee pain can make it difficult to walk, climb stairs, sleep, work, golf, play pickleball, hike, run, ride, or stay active on the lake and in the desert. Dr. Barnes evaluates knee arthritis, meniscus tears, ACL injuries, patellar instability, swelling, fractures, tendon injuries and other knee problems with a practical plan built around your diagnosis, goals and activity level.</p>
+      <p>Knee pain can limit walking, stairs, sleep, work, sports and active Lake Havasu life. Dr. Barnes evaluates arthritis, meniscus tears, ACL injuries, patellar instability, swelling, fractures and tendon injuries with a practical plan built around your diagnosis and goals.</p>
       <div class="knee-chip-grid" aria-label="Common knee problems">
         <div class="knee-chip"><span>🦵</span><p><strong>Knee arthritis</strong><em>Pain, stiffness, swelling and activity limits</em></p></div>
         <div class="knee-chip"><span>⚙️</span><p><strong>Meniscus & cartilage</strong><em>Catching, locking, joint-line pain and swelling</em></p></div>
