@@ -55,6 +55,37 @@
 @media(max-width:1100px){.knee-media img{height:360px!important}.knee-media.contain img{max-height:360px!important}.knee-slider{height:360px!important;min-height:360px!important}}
 @media(max-width:700px){.knee-section{padding:48px 0!important}.knee-section-head{margin-bottom:18px!important}.knee-media img{height:290px!important}.knee-media.contain img{max-height:300px!important}.knee-procedure img{height:190px!important}.knee-slider{height:300px!important;min-height:300px!important}.knee-hero{padding:42px 0 34px!important}}
 
+
+/* v48 knee QA: tighter spacing and fewer empty visual zones */
+.knee-section{padding:54px 0!important;}
+.knee-section-head{margin-bottom:18px!important;gap:18px!important;}
+.knee-section-head h2{font-size:clamp(1.85rem,3.3vw,2.85rem)!important;}
+.knee-section-head p{font-size:.98rem!important;line-height:1.55!important;}
+.knee-feature{grid-template-columns:minmax(0,.98fr) minmax(0,1.02fr)!important;gap:22px!important;}
+.knee-feature.reverse{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr)!important;}
+.knee-copy h2{font-size:clamp(1.8rem,3.1vw,2.75rem)!important;}
+.knee-copy p{font-size:1rem!important;line-height:1.58!important;}
+.knee-card-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;}
+.knee-card{min-height:0!important;padding:16px!important;}
+.knee-card h3{font-size:1.03rem!important;margin-bottom:6px!important;}
+.knee-card p{font-size:.9rem!important;line-height:1.45!important;}
+.knee-media img{height:380px!important;}
+.knee-media.short img{height:310px!important;}
+.knee-media.contain{padding:10px!important;}
+.knee-media.contain img{max-height:360px!important;width:100%!important;}
+.knee-panels{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+.knee-panel{padding:18px!important;}
+.knee-procedure-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;}
+.knee-procedure img{height:170px!important;}
+.knee-procedure div{padding:16px!important;}
+.knee-procedure h3{font-size:1.05rem!important;}
+.knee-procedure p,.knee-procedure li{font-size:.9rem!important;line-height:1.45!important;}
+.knee-lifestyle-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+.knee-lifestyle-grid a{min-height:0!important;padding:16px!important;}
+.knee-cta{padding:28px!important;}
+@media(max-width:1100px){.knee-card-grid,.knee-procedure-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.knee-panels,.knee-lifestyle-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.knee-feature,.knee-feature.reverse{grid-template-columns:1fr!important}.knee-media img{height:340px!important}.knee-media.contain img{max-height:330px!important}}
+@media(max-width:700px){.knee-section{padding:42px 0!important}.knee-card-grid,.knee-procedure-grid,.knee-panels,.knee-lifestyle-grid{grid-template-columns:1fr!important}.knee-media img{height:260px!important}.knee-media.contain img{max-height:260px!important}.knee-procedure img{height:180px!important}.knee-cta{padding:22px!important}}
+
 </style>
 </head>
 <body class="knee-page">
