@@ -90,37 +90,125 @@
     </div>
   </section>
 
-  <section id="procedures">
+  <section id="procedures" class="shoulder-procedure-section">
+    <style>
+      /* v52 targeted fix: scoped procedure-section carousel cards only. */
+      #procedures.shoulder-procedure-section{padding-top:76px;padding-bottom:76px;background:#fff;}
+      #procedures .sp-section-head{margin-bottom:30px;}
+      #procedures .sp-section-head p{max-width:560px;}
+      #procedures .procedure-carousel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch;}
+      #procedures .procedure-card{background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:0 14px 34px rgba(15,23,42,.075);display:flex;flex-direction:column;min-height:100%;}
+      #procedures .procedure-slider{position:relative;height:300px;background:#071D49;overflow:hidden;border-bottom:1px solid var(--line);}
+      #procedures .procedure-slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;margin:0;background:#fff;}
+      #procedures .procedure-slide.active{opacity:1;z-index:2;}
+      #procedures .procedure-slide img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+      #procedures .procedure-slide.contain img{object-fit:contain;background:#fff;padding:14px;}
+      #procedures .procedure-slide[data-focus="left"] img{object-position:35% center;}
+      #procedures .procedure-slide[data-focus="right"] img{object-position:65% center;}
+      #procedures .procedure-slide[data-focus="top"] img{object-position:center 22%;}
+      #procedures .procedure-caption{position:absolute;left:12px;right:12px;bottom:12px;z-index:4;background:rgba(7,29,73,.82);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:16px;padding:10px 12px;font-size:.86rem;font-weight:850;line-height:1.25;}
+      #procedures .procedure-slide.contain .procedure-caption{background:rgba(7,29,73,.9);}
+      #procedures .procedure-controls{position:absolute;right:12px;top:12px;z-index:6;display:flex;align-items:center;gap:7px;background:rgba(7,29,73,.60);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 8px;}
+      #procedures .procedure-controls button{width:32px;height:32px;border-radius:999px;border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.10);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:900;cursor:pointer;line-height:1;}
+      #procedures .procedure-count{color:#fff;font-size:.72rem;font-weight:950;letter-spacing:.04em;min-width:36px;text-align:center;}
+      #procedures .procedure-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1;}
+      #procedures .procedure-body h3{margin:0;color:var(--navy);font-size:1.35rem;letter-spacing:-.025em;line-height:1.1;}
+      #procedures .procedure-body p{margin:0;color:#475569;font-weight:650;}
+      #procedures .procedure-body ul{margin:0;padding-left:19px;color:#475569;font-weight:640;}
+      #procedures .procedure-body li{margin:4px 0;}
+      #procedures .procedure-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:2px;}
+      #procedures .procedure-tags span{font-size:.74rem;font-weight:900;letter-spacing:.02em;color:#071D49;background:#EFF9FF;border:1px solid rgba(39,199,255,.28);border-radius:999px;padding:7px 9px;}
+      #procedures .sp-risk-note{margin-top:22px;}
+      @media(max-width:980px){#procedures .procedure-carousel-grid{grid-template-columns:1fr;}#procedures .procedure-slider{height:330px;}}
+      @media(max-width:640px){#procedures.shoulder-procedure-section{padding-top:56px;padding-bottom:56px;}#procedures .procedure-slider{height:265px;}#procedures .procedure-caption{font-size:.78rem;left:10px;right:10px;bottom:10px;}#procedures .procedure-body{padding:20px;}#procedures .procedure-controls{top:10px;right:10px;}}
+    </style>
     <div class="container">
-      <div class="sp-section-head"><h2>Shoulder procedures.</h2><p>Procedure recommendations are individualized after exam, imaging review and a discussion of goals, nonsurgical alternatives and recovery expectations. Each procedure below is paired with the most relevant shoulder image currently in the site assets.</p></div>
-      <div class="sp-procedure-grid">
-        <article class="sp-procedure">
-          <div class="sp-procedure-visual"><img class="sp-img-rotator-cuff" src="assets/photos/shoulder/shoulder-rehab-band-therapy.jpg" alt="Shoulder rehabilitation after rotator cuff repair"></div>
-          <div class="sp-procedure-body"><h3>Rotator Cuff Repair</h3><p>For selected traumatic or degenerative rotator cuff tears causing pain, weakness and loss of function.</p><ul><li>Often considered when weakness and imaging match symptoms</li><li>Repair protects the tendon while it heals back to bone</li><li>Recovery requires staged therapy and gradual strengthening</li></ul></div>
+      <div class="sp-section-head"><h2>Shoulder procedures.</h2><p>Procedure recommendations are individualized after exam, imaging review and a discussion of goals, nonsurgical alternatives and recovery expectations. Each procedure below uses the most relevant available shoulder images and illustrations from the site assets.</p></div>
+      <div class="procedure-carousel-grid">
+        <article class="procedure-card">
+          <div class="procedure-slider" data-procedure-slider>
+            <figure class="procedure-slide active contain"><img src="assets/photos/shoulder/rotator-cuff-tear.jpg" alt="Rotator cuff tear illustration"><figcaption class="procedure-caption">Rotator cuff tears can cause pain, weakness, night pain and difficulty lifting the arm.</figcaption></figure>
+            <figure class="procedure-slide contain"><img src="assets/photos/shoulder/rotator-cuff-repair.jpg" alt="Rotator cuff repair illustration"><figcaption class="procedure-caption">Repair focuses on securing the tendon back to bone when the tear pattern and tissue quality are appropriate.</figcaption></figure>
+            <figure class="procedure-slide" data-focus="left"><img src="assets/photos/shoulder/shoulder-rehab-band-therapy.jpg" alt="Shoulder rehabilitation after rotator cuff treatment"><figcaption class="procedure-caption">Recovery usually requires protected healing, staged motion and gradual strengthening.</figcaption></figure>
+            <figure class="procedure-slide"><img src="assets/photos/shoulder/wall-crawl-therapy.jpg" alt="Wall crawl therapy after shoulder treatment"><figcaption class="procedure-caption">Therapy progression is matched to the repair, pain control, motion and strength goals.</figcaption></figure>
+            <div class="procedure-controls"><button type="button" data-proc-prev aria-label="Previous rotator cuff image">‹</button><span class="procedure-count">1 / 4</span><button type="button" data-proc-next aria-label="Next rotator cuff image">›</button></div>
+          </div>
+          <div class="procedure-body"><h3>Rotator Cuff Repair</h3><p>For selected traumatic or degenerative rotator cuff tears causing pain, weakness and loss of function.</p><ul><li>Often considered when weakness and imaging match symptoms</li><li>Repair protects the tendon while it heals back to bone</li><li>Recovery requires staged therapy and gradual strengthening</li></ul><div class="procedure-tags"><span>Rotator cuff tear</span><span>Repair</span><span>Rehab</span></div></div>
         </article>
-        <article class="sp-procedure">
-          <div class="sp-procedure-visual"><img class="sp-img-arthroscopy" src="assets/photos/shoulder/shoulder-mri-review.jpg" alt="Reviewing shoulder imaging before arthroscopic shoulder surgery"></div>
-          <div class="sp-procedure-body"><h3>Shoulder Arthroscopy</h3><p>Minimally invasive arthroscopic shoulder surgery may be used for selected rotator cuff, labral, biceps, bursitis, impingement and instability problems.</p><ul><li>Small incisions and camera-guided treatment</li><li>May include debridement, acromioplasty or soft-tissue repair</li><li>Procedure choice depends on the actual pain generator</li></ul></div>
+        <article class="procedure-card">
+          <div class="procedure-slider" data-procedure-slider>
+            <figure class="procedure-slide active contain"><img src="assets/photos/shoulder/shoulder-arthroscopy-camera.jpg" alt="Shoulder arthroscopy camera illustration"><figcaption class="procedure-caption">Shoulder arthroscopy uses a camera and small instruments to evaluate and treat selected shoulder problems.</figcaption></figure>
+            <figure class="procedure-slide"><img src="assets/photos/shoulder/shoulder-mri-review.jpg" alt="Reviewing shoulder MRI before arthroscopy"><figcaption class="procedure-caption">Imaging review helps match the surgical plan to the actual pain generator.</figcaption></figure>
+            <figure class="procedure-slide"><img src="assets/photos/shoulder/dr-barnes-shoulder-exam.jpg" alt="Orthopedic shoulder examination"><figcaption class="procedure-caption">The procedure choice depends on history, exam findings, imaging and patient goals.</figcaption></figure>
+            <div class="procedure-controls"><button type="button" data-proc-prev aria-label="Previous arthroscopy image">‹</button><span class="procedure-count">1 / 3</span><button type="button" data-proc-next aria-label="Next arthroscopy image">›</button></div>
+          </div>
+          <div class="procedure-body"><h3>Shoulder Arthroscopy</h3><p>Minimally invasive arthroscopic shoulder surgery may be used for selected rotator cuff, labral, biceps, bursitis, impingement and instability problems.</p><ul><li>Small incisions and camera-guided treatment</li><li>May include debridement, acromioplasty or soft-tissue repair</li><li>Procedure choice depends on the actual pain generator</li></ul><div class="procedure-tags"><span>Arthroscopy</span><span>Camera-guided</span><span>Small incisions</span></div></div>
         </article>
-        <article class="sp-procedure">
-          <div class="sp-procedure-visual"><img class="sp-img-labral" src="assets/photos/shoulder/physical-therapy-guided-shoulder.jpg" alt="Physical therapy guided shoulder stabilization after instability care"></div>
-          <div class="sp-procedure-body"><h3>Labral Repair &amp; Stabilization</h3><p>For recurrent dislocations, Bankart tears, bony Bankart injuries or persistent instability in athletes and active patients.</p><ul><li>Goal is to reduce slipping and recurrent dislocation risk</li><li>May require soft-tissue repair or bone-based procedures</li><li>Return to sport depends on healing, strength and sport demands</li></ul></div>
+        <article class="procedure-card">
+          <div class="procedure-slider" data-procedure-slider>
+            <figure class="procedure-slide active contain"><img src="assets/photos/shoulder/labral-tear.jpg" alt="Shoulder labral tear illustration"><figcaption class="procedure-caption">Labral tears can be associated with instability, slipping, catching or recurrent dislocations.</figcaption></figure>
+            <figure class="procedure-slide contain"><img src="assets/photos/shoulder/labral-repair.jpg" alt="Shoulder labral repair illustration"><figcaption class="procedure-caption">Labral repair and stabilization aim to restore soft-tissue restraint and reduce recurrent instability.</figcaption></figure>
+            <figure class="procedure-slide"><img src="assets/photos/shoulder/physical-therapy-guided-shoulder.jpg" alt="Physical therapy guided shoulder stabilization"><figcaption class="procedure-caption">Return to sport depends on healing, motion, strength, control and sport-specific demands.</figcaption></figure>
+            <figure class="procedure-slide"><img src="assets/photos/shoulder/scapular-mechanics-therapy.jpg" alt="Scapular mechanics therapy"><figcaption class="procedure-caption">Scapular control and mechanics are often part of instability and return-to-performance rehab.</figcaption></figure>
+            <div class="procedure-controls"><button type="button" data-proc-prev aria-label="Previous labral repair image">‹</button><span class="procedure-count">1 / 4</span><button type="button" data-proc-next aria-label="Next labral repair image">›</button></div>
+          </div>
+          <div class="procedure-body"><h3>Labral Repair &amp; Stabilization</h3><p>For recurrent dislocations, Bankart tears, bony Bankart injuries or persistent instability in athletes and active patients.</p><ul><li>Goal is to reduce slipping and recurrent dislocation risk</li><li>May require soft-tissue repair or bone-based procedures</li><li>Return to sport depends on healing, strength and sport demands</li></ul><div class="procedure-tags"><span>Labrum</span><span>Instability</span><span>Stabilization</span></div></div>
         </article>
-        <article class="sp-procedure">
-          <div class="sp-procedure-visual"><img class="sp-img-biceps" src="assets/photos/shoulder/baseball-pitcher-shoulder.jpg" alt="Overhead athlete with shoulder demands related to biceps and labral pain"></div>
-          <div class="sp-procedure-body"><h3>Biceps Tenodesis</h3><p>Treats selected painful biceps tendon problems by moving the tendon attachment away from the inflamed or unstable portion of the shoulder.</p><ul><li>May be paired with rotator cuff or labral surgery</li><li>Used for selected anterior shoulder pain patterns</li><li>Recovery depends on associated procedures</li></ul></div>
+        <article class="procedure-card">
+          <div class="procedure-slider" data-procedure-slider>
+            <figure class="procedure-slide active contain"><img src="assets/photos/shoulder/biceps-tenodesis.jpg" alt="Biceps tenodesis illustration"><figcaption class="procedure-caption">Biceps tenodesis treats selected painful biceps tendon problems in the front of the shoulder.</figcaption></figure>
+            <figure class="procedure-slide"><img src="assets/photos/shoulder/baseball-pitcher-shoulder.jpg" alt="Overhead athlete with shoulder demands"><figcaption class="procedure-caption">Biceps and labral symptoms may be especially relevant in overhead athletes and active patients.</figcaption></figure>
+            <figure class="procedure-slide"><img src="assets/photos/shoulder/shoulder-mri-review.jpg" alt="Shoulder imaging review for biceps pain"><figcaption class="procedure-caption">Biceps treatment is often considered alongside rotator cuff or labral findings.</figcaption></figure>
+            <div class="procedure-controls"><button type="button" data-proc-prev aria-label="Previous biceps image">‹</button><span class="procedure-count">1 / 3</span><button type="button" data-proc-next aria-label="Next biceps image">›</button></div>
+          </div>
+          <div class="procedure-body"><h3>Biceps Tenodesis</h3><p>Treats selected painful biceps tendon problems by moving the tendon attachment away from the inflamed or unstable portion of the shoulder.</p><ul><li>May be paired with rotator cuff or labral surgery</li><li>Used for selected anterior shoulder pain patterns</li><li>Recovery depends on associated procedures</li></ul><div class="procedure-tags"><span>Biceps pain</span><span>Tenodesis</span><span>Overhead athlete</span></div></div>
         </article>
-        <article class="sp-procedure">
-          <div class="sp-procedure-visual contain"><img class="sp-img-replacement" src="assets/photos/shoulder/reverse-shoulder-replacement.jpg" alt="Reverse shoulder replacement illustration and implant concept"></div>
-          <div class="sp-procedure-body"><h3>Shoulder Replacement</h3><p>For advanced shoulder arthritis, fracture-related damage or selected irreparable cuff-related problems when nonoperative care is no longer enough.</p><ul><li>Anatomic or reverse shoulder replacement depending on diagnosis</li><li>Focus on pain relief, function and realistic expectations</li><li>Rehabilitation is matched to implant type and tissue quality</li></ul></div>
+        <article class="procedure-card">
+          <div class="procedure-slider" data-procedure-slider>
+            <figure class="procedure-slide active contain"><img src="assets/photos/shoulder/glenohumeral-arthritis.jpg" alt="Glenohumeral shoulder arthritis illustration"><figcaption class="procedure-caption">Advanced shoulder arthritis can cause pain, stiffness, grinding and loss of function.</figcaption></figure>
+            <figure class="procedure-slide contain"><img src="assets/photos/shoulder/advanced-glenohumeral-arthritis.jpg" alt="Advanced glenohumeral arthritis illustration"><figcaption class="procedure-caption">Replacement may be considered when symptoms and imaging show severe joint damage.</figcaption></figure>
+            <figure class="procedure-slide contain"><img src="assets/photos/shoulder/shoulder-replacement-anatomic.jpg" alt="Anatomic shoulder replacement illustration"><figcaption class="procedure-caption">Anatomic shoulder replacement may be used when the rotator cuff and bone pattern are appropriate.</figcaption></figure>
+            <figure class="procedure-slide contain"><img src="assets/photos/shoulder/reverse-shoulder-replacement-labeled.jpg" alt="Labeled reverse shoulder replacement illustration"><figcaption class="procedure-caption">Reverse shoulder replacement is used for selected arthritis, cuff-related or fracture-related problems.</figcaption></figure>
+            <figure class="procedure-slide contain"><img src="assets/photos/shoulder/shoulder-replacement-xray.jpg" alt="Shoulder replacement X-ray"><figcaption class="procedure-caption">Recovery goals focus on pain relief, function and realistic return to daily activity.</figcaption></figure>
+            <div class="procedure-controls"><button type="button" data-proc-prev aria-label="Previous shoulder replacement image">‹</button><span class="procedure-count">1 / 5</span><button type="button" data-proc-next aria-label="Next shoulder replacement image">›</button></div>
+          </div>
+          <div class="procedure-body"><h3>Shoulder Replacement</h3><p>For advanced shoulder arthritis, fracture-related damage or selected irreparable cuff-related problems when nonoperative care is no longer enough.</p><ul><li>Anatomic or reverse shoulder replacement depending on diagnosis</li><li>Focus on pain relief, function and realistic expectations</li><li>Rehabilitation is matched to implant type and tissue quality</li></ul><div class="procedure-tags"><span>Arthritis</span><span>Anatomic</span><span>Reverse</span></div></div>
         </article>
-        <article class="sp-procedure">
-          <div class="sp-procedure-visual contain"><img class="sp-img-fracture" src="assets/photos/shoulder/clavicle-fracture.jpg" alt="Clavicle fracture care illustration"></div>
-          <div class="sp-procedure-body"><h3>Fracture Care</h3><p>Clavicle, proximal humerus and other shoulder-region fractures may be treated with immobilization, therapy or surgery depending on the fracture pattern.</p><ul><li>Imaging review helps determine stability and alignment</li><li>Surgery may involve plates, screws or replacement in selected cases</li><li>Recovery depends on bone healing and soft tissue injury</li></ul></div>
+        <article class="procedure-card">
+          <div class="procedure-slider" data-procedure-slider>
+            <figure class="procedure-slide active contain"><img src="assets/photos/shoulder/clavicle-fracture-simple.jpg" alt="Simple clavicle fracture illustration"><figcaption class="procedure-caption">Clavicle and shoulder-region fractures are evaluated for alignment, stability and healing potential.</figcaption></figure>
+            <figure class="procedure-slide contain"><img src="assets/photos/shoulder/clavicle-fracture-butterfly.jpg" alt="Butterfly clavicle fracture illustration"><figcaption class="procedure-caption">Fracture pattern, displacement and patient goals help guide nonoperative versus surgical care.</figcaption></figure>
+            <figure class="procedure-slide contain"><img src="assets/photos/shoulder/clavicle-fracture-fixation.jpg" alt="Clavicle fracture fixation illustration"><figcaption class="procedure-caption">Surgery may involve plate and screw fixation for selected fracture patterns.</figcaption></figure>
+            <figure class="procedure-slide contain"><img src="assets/photos/shoulder/clavicle-orif.jpg" alt="Clavicle ORIF illustration"><figcaption class="procedure-caption">ORIF is considered when fixation is expected to improve alignment, healing or function.</figcaption></figure>
+            <figure class="procedure-slide contain"><img src="assets/photos/shoulder/clavicle-healing-callus.jpg" alt="Clavicle fracture healing callus"><figcaption class="procedure-caption">Follow-up focuses on healing, comfort, motion and gradual return to activity.</figcaption></figure>
+            <div class="procedure-controls"><button type="button" data-proc-prev aria-label="Previous fracture image">‹</button><span class="procedure-count">1 / 5</span><button type="button" data-proc-next aria-label="Next fracture image">›</button></div>
+          </div>
+          <div class="procedure-body"><h3>Fracture Care</h3><p>Clavicle, proximal humerus and other shoulder-region fractures may be treated with immobilization, therapy or surgery depending on the fracture pattern.</p><ul><li>Imaging review helps determine stability and alignment</li><li>Surgery may involve plates, screws or replacement in selected cases</li><li>Recovery depends on bone healing and soft-tissue injury</li></ul><div class="procedure-tags"><span>Clavicle</span><span>Fracture fixation</span><span>Healing</span></div></div>
         </article>
       </div>
       <div class="sp-risk-note"><h3>Surgical risks</h3><p>All surgery has risk, including pain, bleeding, infection, damage to surrounding tissues, need for additional procedures, bone failure, implant failure, soft-tissue failure, blood clot, heart attack, stroke and death. These risks are low, but they are not zero.</p></div>
     </div>
+    <script>
+      (function(){
+        document.querySelectorAll('#procedures [data-procedure-slider]').forEach(function(slider){
+          var slides=[].slice.call(slider.querySelectorAll('.procedure-slide'));
+          var prev=slider.querySelector('[data-proc-prev]');
+          var next=slider.querySelector('[data-proc-next]');
+          var count=slider.querySelector('.procedure-count');
+          var index=0;
+          if(!slides.length) return;
+          function show(n){
+            slides[index].classList.remove('active');
+            index=(n+slides.length)%slides.length;
+            slides[index].classList.add('active');
+            if(count) count.textContent=(index+1)+' / '+slides.length;
+          }
+          if(count) count.textContent='1 / '+slides.length;
+          if(prev) prev.addEventListener('click',function(){show(index-1);});
+          if(next) next.addEventListener('click',function(){show(index+1);});
+        });
+      })();
+    </script>
   </section>
 
   <section class="sp-bg">
