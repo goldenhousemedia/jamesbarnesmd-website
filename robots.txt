@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jamesbarnesmd.com/sitemap.xml
