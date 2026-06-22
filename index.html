@@ -143,14 +143,11 @@
 </section>
 <section class="reviews patient-review-section" id="reviews">
 <div class="container">
-<div class="section-head"><h2>Patient reviews matter.</h2><p>Patients often look for the same things before choosing an orthopedic surgeon: clear communication, trust, practical options, and support through recovery.</p></div>
-<div class="patient-review-showcase">
-<article class="review-intro-card"><div class="stars">★★★★★</div><h3>What patients consistently notice</h3><p>These rotating review highlights keep the emphasis on the themes that matter most: being heard, understanding the plan, and feeling confident about the next step.</p><div class="review-action-row"><a class="btn btn-primary" href="https://www.tebra.com/care/provider/james-barnes-md-1083980585#reviews" rel="noopener" target="_blank">Read Patient Reviews</a><a class="btn btn-secondary" href="why-patients-choose-dr-barnes.html">Why Dr. Barnes</a></div></article>
+<div class="section-head review-section-head"><div><h2>Patient reviews matter.</h2><p>Real patient feedback helps new patients understand communication style, trust, and whether the care experience feels like the right fit.</p></div><div class="review-section-actions"><a class="btn btn-primary" href="https://www.tebra.com/care/provider/james-barnes-md-1083980585#reviews" rel="noopener" target="_blank">Read Patient Reviews</a><a class="btn btn-secondary" href="why-patients-choose-dr-barnes.html#reviews">Why Dr. Barnes</a></div></div>
 <div class="patient-review-cards" data-review-rotator>
-<article class="dynamic-review-card" data-review-card="0"><div class="stars">★★★★★</div><p class="dynamic-review-text">“Dr. Barnes is an absolute GEM… kind, funny, and knowledgeable too.”</p><span class="dynamic-review-author">Patient review</span></article>
-<article class="dynamic-review-card" data-review-card="1"><div class="stars">★★★★★</div><p class="dynamic-review-text">Clear explanations, practical options, and a plan that is easy to understand.</p><span class="dynamic-review-author">Communication theme</span></article>
-<article class="dynamic-review-card" data-review-card="2"><div class="stars">★★★★★</div><p class="dynamic-review-text">A calm, respectful visit where questions are answered before decisions are made.</p><span class="dynamic-review-author">Trust theme</span></article>
-</div>
+<article class="dynamic-review-card" data-review-card="0"><div class="stars">★★★★★</div><p class="dynamic-review-text">“Excellent Doctor, that takes the time needed to answer all of my questions.”</p><span class="dynamic-review-author">Tebra patient review</span></article>
+<article class="dynamic-review-card" data-review-card="1"><div class="stars">★★★★★</div><p class="dynamic-review-text">“Dr. Barnes is kind, professional, very competent and listens intently.”</p><span class="dynamic-review-author">Tebra patient review</span></article>
+<article class="dynamic-review-card" data-review-card="2"><div class="stars">★★★★★</div><p class="dynamic-review-text">“Professional service. Dr Barnes took time to explain all my options.”</p><span class="dynamic-review-author">Tebra patient review</span></article>
 </div>
 </div>
 </section><section id="local-care">
@@ -192,27 +189,44 @@
 <script>
 (function(){
   const reviewItems=[
-    {text:'“Dr. Barnes is an absolute GEM… kind, funny, and knowledgeable too.”',author:'Patient review'},
-    {text:'Clear explanations, practical options, and a plan that is easy to understand.',author:'Communication theme'},
-    {text:'Patients describe feeling heard, respected, and included in the decision-making process.',author:'Trust theme'},
-    {text:'A practical approach that explains when surgery makes sense — and when it does not.',author:'Treatment-planning theme'},
-    {text:'Support through the recovery process, from the first visit to follow-up care.',author:'Recovery-support theme'},
-    {text:'Orthopedic care that feels personal, calm, and focused on getting back to life.',author:'Patient-care theme'}
+    {text:'“Excellent Doctor, that takes the time needed to answer all of my questions.”',author:'Tebra patient review'},
+    {text:'“Dr. Barnes is kind, professional, very competent and listens intently.”',author:'Tebra patient review'},
+    {text:'“Professional service. Dr Barnes took time to explain all my options.”',author:'Tebra patient review'},
+    {text:'“Outstanding care. Dr Barnes is caring and competent.”',author:'Tebra patient review'},
+    {text:'“He takes the time to explain everything.”',author:'Tebra patient review'},
+    {text:'“Professional and personal service.”',author:'Tebra patient review'},
+    {text:'“Great Dr. and super friendly!”',author:'Tebra patient review'},
+    {text:'“Staff is very knowledgeable and Dr Barnes is caring.”',author:'Tebra patient review'},
+    {text:'“Very patient friendly… Scott is amazing assistant.”',author:'Tebra patient review'}
   ];
   function setupReviewRotator(root){
     const cards=[...root.querySelectorAll('[data-review-card]')];
     if(!cards.length) return;
-    let step=0;
-    function paint(card, idx){
-      const item=reviewItems[(idx+step)%reviewItems.length];
+    let nextIndex=cards.length % reviewItems.length;
+    let cardIndex=0;
+    function setCard(card,item){
       const text=card.querySelector('.dynamic-review-text');
       const author=card.querySelector('.dynamic-review-author');
       if(!text||!author) return;
-      text.classList.add('fade-out'); author.classList.add('fade-out');
-      setTimeout(()=>{text.textContent=item.text;author.textContent=item.author;text.classList.remove('fade-out');author.classList.remove('fade-out');},240);
+      text.classList.add('fade-out');
+      author.classList.add('fade-out');
+      setTimeout(()=>{
+        text.textContent=item.text;
+        author.textContent=item.author;
+        text.classList.remove('fade-out');
+        author.classList.remove('fade-out');
+      },260);
     }
-    function rotate(){step=(step+1)%reviewItems.length;cards.forEach((card,idx)=>paint(card,idx));}
-    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){setInterval(rotate,5200);}
+    function rotateOne(){
+      const card=cards[cardIndex];
+      const item=reviewItems[nextIndex];
+      setCard(card,item);
+      cardIndex=(cardIndex+1)%cards.length;
+      nextIndex=(nextIndex+1)%reviewItems.length;
+    }
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      setInterval(rotateOne,3600);
+    }
   }
   document.querySelectorAll('[data-review-rotator]').forEach(setupReviewRotator);
 })();
