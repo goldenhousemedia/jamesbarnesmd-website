@@ -37,13 +37,13 @@
         </div>
       </div>
       <div class="jr-media-panel">
-        <div class="jr-slider" data-jr-slider>
-          <div class="slides">
-            <figure class="active"><img class="jr-hero-img" src="assets/photos/joint-replacement/hero-arthroplasty-consult.webp" alt="Dr. Barnes discussing joint replacement options with a patient using a knee replacement model"><figcaption>Shared decision-making about joint replacement options, timing, and recovery.</figcaption></figure>
-            <figure><img src="assets/photos/joint-replacement/mako-hip-planning.webp" alt="Dr. Barnes reviewing hip replacement planning on two monitors"><figcaption>Mako-assisted hip and knee planning may be used for the right patient.</figcaption></figure>
-            <figure><img src="assets/photos/joint-replacement/outpatient-home-recovery.webp" alt="Patient recovering at home after outpatient joint replacement with a walker nearby"><figcaption>Most joint replacements are designed around safe recovery at home.</figcaption></figure>
+        <div class="jr-carousel" data-jr-carousel>
+          <div class="jr-c-slides">
+            <figure class="jr-c-slide is-active"><img class="jr-hero-img" src="assets/photos/joint-replacement/hero-arthroplasty-consult.webp" alt="Dr. Barnes discussing joint replacement options with a patient using a knee replacement model"><figcaption>Shared decision-making about joint replacement options, timing, and recovery.</figcaption></figure>
+            <figure class="jr-c-slide"><img src="assets/photos/joint-replacement/mako-hip-planning.webp" alt="Dr. Barnes reviewing hip replacement planning on two monitors"><figcaption>Mako-assisted hip and knee planning may be used for the right patient.</figcaption></figure>
+            <figure class="jr-c-slide"><img src="assets/photos/joint-replacement/outpatient-home-recovery.webp" alt="Patient recovering at home after outpatient joint replacement with a walker nearby"><figcaption>Most joint replacements are designed around safe recovery at home.</figcaption></figure>
           </div>
-          <button class="slider-prev" type="button" aria-label="Previous image">‹</button><button class="slider-next" type="button" aria-label="Next image">›</button><div class="slider-ui"><div class="slider-dots" aria-label="Image selector"></div></div>
+          <button class="jr-c-prev" type="button" aria-label="Previous image">‹</button><button class="jr-c-next" type="button" aria-label="Next image">›</button><div class="jr-c-ui"><div class="jr-c-dots" aria-label="Image selector"></div></div>
         </div>
       </div>
     </div>
@@ -86,13 +86,13 @@
   <section id="approach">
     <div class="container jr-copy-grid reverse">
       <div class="jr-feature-media">
-        <div class="jr-slider jr-feature-slider" data-jr-slider>
-          <div class="slides">
-            <figure class="active"><img src="assets/photos/joint-replacement/mako-hip-planning.webp" alt="Dr. Barnes reviewing hip replacement planning on two monitors"></figure>
-            <figure><img src="assets/photos/joint-replacement/hero-arthroplasty-consult.webp" alt="Dr. Barnes explaining a knee replacement model during a consultation"></figure>
-            <figure><img src="assets/photos/joint-replacement/posterior-hip-precautions-teaching.webp" alt="Dr. Barnes explaining a hip replacement model to a patient"></figure>
+        <div class="jr-carousel jr-feature-carousel" data-jr-carousel>
+          <div class="jr-c-slides">
+            <figure class="jr-c-slide is-active"><img src="assets/photos/joint-replacement/mako-hip-planning.webp" alt="Dr. Barnes reviewing hip replacement planning on two monitors"></figure>
+            <figure class="jr-c-slide"><img src="assets/photos/joint-replacement/hero-arthroplasty-consult.webp" alt="Dr. Barnes explaining a knee replacement model during a consultation"></figure>
+            <figure class="jr-c-slide"><img src="assets/photos/joint-replacement/posterior-hip-precautions-teaching.webp" alt="Dr. Barnes explaining a hip replacement model to a patient"></figure>
           </div>
-          <button class="slider-prev" type="button" aria-label="Previous image">‹</button><button class="slider-next" type="button" aria-label="Next image">›</button><div class="slider-ui"><div class="slider-dots" aria-label="Image selector"></div></div>
+          <button class="jr-c-prev" type="button" aria-label="Previous image">‹</button><button class="jr-c-next" type="button" aria-label="Next image">›</button><div class="jr-c-ui"><div class="jr-c-dots" aria-label="Image selector"></div></div>
         </div>
       </div>
       <div class="jr-copy">
@@ -163,13 +163,13 @@
   <section id="therapy">
     <div class="container jr-copy-grid reverse">
       <div class="jr-feature-media">
-        <div class="jr-slider jr-feature-slider" data-jr-slider>
-          <div class="slides">
-            <figure class="active"><img src="assets/photos/joint-replacement/knee-replacement-therapy.webp" alt="Postoperative knee replacement patient working on knee range of motion with a therapist"></figure>
-            <figure><img src="assets/photos/joint-replacement/shoulder-replacement-rehab.webp" alt="Patient performing shoulder rehabilitation after shoulder replacement with therapist guidance"></figure>
-            <figure><img class="jr-desert-img" src="assets/photos/joint-replacement/active-recovery-desert.webp" alt="Older active woman walking in desert mountains after joint replacement recovery"></figure>
+        <div class="jr-carousel jr-feature-carousel" data-jr-carousel>
+          <div class="jr-c-slides">
+            <figure class="jr-c-slide is-active"><img src="assets/photos/joint-replacement/knee-replacement-therapy.webp" alt="Postoperative knee replacement patient working on knee range of motion with a therapist"></figure>
+            <figure class="jr-c-slide"><img src="assets/photos/joint-replacement/shoulder-replacement-rehab.webp" alt="Patient performing shoulder rehabilitation after shoulder replacement with therapist guidance"></figure>
+            <figure class="jr-c-slide"><img class="jr-desert-img" src="assets/photos/joint-replacement/active-recovery-desert.webp" alt="Older active woman walking in desert mountains after joint replacement recovery"></figure>
           </div>
-          <button class="slider-prev" type="button" aria-label="Previous image">‹</button><button class="slider-next" type="button" aria-label="Next image">›</button><div class="slider-ui"><div class="slider-dots" aria-label="Image selector"></div></div>
+          <button class="jr-c-prev" type="button" aria-label="Previous image">‹</button><button class="jr-c-next" type="button" aria-label="Next image">›</button><div class="jr-c-ui"><div class="jr-c-dots" aria-label="Image selector"></div></div>
         </div>
       </div>
       <div class="jr-copy">
@@ -253,20 +253,21 @@
   document.querySelectorAll('.dropdown .dropbtn').forEach(btn=>{btn.setAttribute('tabindex','0');btn.setAttribute('role','button');btn.setAttribute('aria-expanded','false');function activate(e){if(window.matchMedia('(max-width:980px)').matches){e.preventDefault();const parent=btn.closest('.dropdown');const willOpen=!parent.classList.contains('open');document.querySelectorAll('.dropdown.open').forEach(d=>{if(d!==parent)d.classList.remove('open');const b=d.querySelector('.dropbtn');if(b)b.setAttribute('aria-expanded','false');});parent.classList.toggle('open',willOpen);btn.setAttribute('aria-expanded',willOpen?'true':'false');}}btn.addEventListener('click',activate);btn.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')activate(e);});});
 })();
 (function(){
-  function initSlider(slider){
-    const slides=[...slider.querySelectorAll('figure')];
-    const dotsWrap=slider.querySelector('.slider-dots');
-    const prev=slider.querySelector('.slider-prev');
-    const next=slider.querySelector('.slider-next');
+  function initCarousel(carousel){
+    const slides=[...carousel.querySelectorAll('.jr-c-slide')];
+    const dotsWrap=carousel.querySelector('.jr-c-dots');
+    const prev=carousel.querySelector('.jr-c-prev');
+    const next=carousel.querySelector('.jr-c-next');
     let index=0;
     if(!slides.length || !dotsWrap) return;
-    slides.forEach((_,i)=>{const dot=document.createElement('button');dot.type='button';dot.className='slider-dot'+(i===0?' active':'');dot.setAttribute('aria-label','Show image '+(i+1));dot.addEventListener('click',()=>show(i));dotsWrap.appendChild(dot);});
-    const dots=[...dotsWrap.querySelectorAll('.slider-dot')];
-    function show(i){index=(i+slides.length)%slides.length;slides.forEach((s,j)=>s.classList.toggle('active',j===index));dots.forEach((d,j)=>d.classList.toggle('active',j===index));}
+    dotsWrap.innerHTML='';
+    slides.forEach((_,i)=>{const dot=document.createElement('button');dot.type='button';dot.className='jr-c-dot'+(i===0?' is-active':'');dot.setAttribute('aria-label','Show image '+(i+1));dot.addEventListener('click',()=>show(i));dotsWrap.appendChild(dot);});
+    const dots=[...dotsWrap.querySelectorAll('.jr-c-dot')];
+    function show(i){index=(i+slides.length)%slides.length;slides.forEach((s,j)=>s.classList.toggle('is-active',j===index));dots.forEach((d,j)=>d.classList.toggle('is-active',j===index));}
     if(prev) prev.addEventListener('click',()=>show(index-1));
     if(next) next.addEventListener('click',()=>show(index+1));
   }
-  document.querySelectorAll('[data-jr-slider]').forEach(initSlider);
+  document.querySelectorAll('[data-jr-carousel]').forEach(initCarousel);
 })();
 </script>
 </body>

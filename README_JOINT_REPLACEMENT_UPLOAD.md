@@ -1,9 +1,12 @@
-# Joint Replacement Hub Page Upload
+# Joint Replacement Upload Package
 
-Upload these paths to the root of the `jamesbarnesmd-website` GitHub repository:
+Upload these paths to the root of the `jamesbarnesmd-website` GitHub repository.
 
-- `joint-replacement-lake-havasu.html` — replaces the current thin joint replacement page.
-- `assets/css/styles.css` — your existing site CSS with the joint replacement CSS block appended at the bottom. This is not a separate CSS file.
-- `assets/photos/joint-replacement/` — new rendered images for the arthroplasty page.
+Replace/merge:
+- `joint-replacement-lake-havasu.html`
+- `assets/css/styles.css`
+- `assets/photos/joint-replacement/`
 
-Do not create a `/joint-replacement/` folder for this package. This matches your current flat-file site structure and existing navigation link.
+This version uses the existing site CSS file only. The joint replacement carousel CSS is scoped to `jr-` classes and uses unique carousel classes to avoid the large oval overlay from generic slider styles.
+
+The posterior hip precautions graphic has been replaced with the corrected image showing sitting as acceptable when the knee stays on its side and does not cross the midline.
