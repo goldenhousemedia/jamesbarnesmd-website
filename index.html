@@ -141,13 +141,19 @@
 <div class="why-preview-card"><strong>Care philosophy</strong><p>Shared decision-making, honest expectations, local access, and a treatment plan that fits the patient — not just the X-ray.</p></div>
 </div>
 </section>
-<section class="reviews" id="reviews">
+<section class="reviews patient-review-section" id="reviews">
 <div class="container">
-<div class="section-head"><h2>Patient reviews matter.</h2><p>Reviews can help patients understand communication style, trust, recovery support, and whether a practice feels like the right fit.</p></div>
-<div class="review-grid"><a class="review-card" href="index.html#reviews"><div class="rating-big">★★★★★</div><p>Rotating patient review highlights help patients quickly see themes of communication, trust, and care.</p><small>Also featured on the Why Dr. Barnes page.</small></a><div class="review-rotator-card"><div class="stars">★★★★★</div><p class="review-quote-main">“Clear explanations, practical options, and a plan I understood.”</p><span class="review-author-main">Patient review theme</span></div></div>
+<div class="section-head"><h2>Patient reviews matter.</h2><p>Patients often look for the same things before choosing an orthopedic surgeon: clear communication, trust, practical options, and support through recovery.</p></div>
+<div class="patient-review-showcase">
+<article class="review-intro-card"><div class="stars">★★★★★</div><h3>What patients consistently notice</h3><p>These rotating review highlights keep the emphasis on the themes that matter most: being heard, understanding the plan, and feeling confident about the next step.</p><div class="review-action-row"><a class="btn btn-primary" href="https://www.tebra.com/care/provider/james-barnes-md-1083980585#reviews" rel="noopener" target="_blank">Read Patient Reviews</a><a class="btn btn-secondary" href="why-patients-choose-dr-barnes.html">Why Dr. Barnes</a></div></article>
+<div class="patient-review-cards" data-review-rotator>
+<article class="dynamic-review-card" data-review-card="0"><div class="stars">★★★★★</div><p class="dynamic-review-text">“Dr. Barnes is an absolute GEM… kind, funny, and knowledgeable too.”</p><span class="dynamic-review-author">Patient review</span></article>
+<article class="dynamic-review-card" data-review-card="1"><div class="stars">★★★★★</div><p class="dynamic-review-text">Clear explanations, practical options, and a plan that is easy to understand.</p><span class="dynamic-review-author">Communication theme</span></article>
+<article class="dynamic-review-card" data-review-card="2"><div class="stars">★★★★★</div><p class="dynamic-review-text">A calm, respectful visit where questions are answered before decisions are made.</p><span class="dynamic-review-author">Trust theme</span></article>
 </div>
-</section>
-<section id="local-care">
+</div>
+</div>
+</section><section id="local-care">
 <div class="container">
 <div class="section-head"><h2>Local orthopedic care in Lake Havasu City.</h2><p>Clinic care begins through Convergence Health, with surgery planning based on the safest, most appropriate setting for the patient and procedure.</p></div>
 <div class="local-directory-grid">
@@ -182,4 +188,32 @@
   document.querySelectorAll('[data-home-carousel]').forEach((c,idx)=>setupHomeCarousel(c, 6500 + idx*700));
 })();
 </script>
-</body></html>
+
+<script>
+(function(){
+  const reviewItems=[
+    {text:'“Dr. Barnes is an absolute GEM… kind, funny, and knowledgeable too.”',author:'Patient review'},
+    {text:'Clear explanations, practical options, and a plan that is easy to understand.',author:'Communication theme'},
+    {text:'Patients describe feeling heard, respected, and included in the decision-making process.',author:'Trust theme'},
+    {text:'A practical approach that explains when surgery makes sense — and when it does not.',author:'Treatment-planning theme'},
+    {text:'Support through the recovery process, from the first visit to follow-up care.',author:'Recovery-support theme'},
+    {text:'Orthopedic care that feels personal, calm, and focused on getting back to life.',author:'Patient-care theme'}
+  ];
+  function setupReviewRotator(root){
+    const cards=[...root.querySelectorAll('[data-review-card]')];
+    if(!cards.length) return;
+    let step=0;
+    function paint(card, idx){
+      const item=reviewItems[(idx+step)%reviewItems.length];
+      const text=card.querySelector('.dynamic-review-text');
+      const author=card.querySelector('.dynamic-review-author');
+      if(!text||!author) return;
+      text.classList.add('fade-out'); author.classList.add('fade-out');
+      setTimeout(()=>{text.textContent=item.text;author.textContent=item.author;text.classList.remove('fade-out');author.classList.remove('fade-out');},240);
+    }
+    function rotate(){step=(step+1)%reviewItems.length;cards.forEach((card,idx)=>paint(card,idx));}
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){setInterval(rotate,5200);}
+  }
+  document.querySelectorAll('[data-review-rotator]').forEach(setupReviewRotator);
+})();
+</script></body></html>
