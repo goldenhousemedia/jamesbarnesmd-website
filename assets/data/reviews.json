@@ -1,126 +1,147 @@
 [
   {
+    "name": "Barry R.",
     "quote": "Best orthopedic surgeon in Havasu AZ. Easy to work with and explains options well. Thank you!!",
     "source": "Tebra patient survey",
     "date": "Jun 2026",
     "rating": 5
   },
   {
+    "name": "Regina C.",
     "quote": "Dr. Barnes came to my rescue. He is kind, funny, knowledgeable, and informative. 10/10 recommended Dr. Barnes!!!",
     "source": "Tebra patient survey",
     "date": "Jun 2026",
     "rating": 5
   },
   {
+    "name": "Raymond A.",
     "quote": "Professional and personal service.",
     "source": "Tebra patient survey",
     "date": "Jun 2026",
     "rating": 5
   },
   {
+    "name": "Michael B.",
     "quote": "He takes the time to explain everything.",
     "source": "Tebra patient survey",
     "date": "Jun 2026",
     "rating": 5
   },
   {
-    "quote": "Very patient friendly, also his office staff is friendly and considerate. Scott is an amazing assistant.",
+    "name": "Roxana H.",
+    "quote": "Very patient friendly, also his office staff is friendly and considering. Scott is an amazing assistant.",
     "source": "Tebra patient survey",
     "date": "Jun 2026",
     "rating": 5
   },
   {
+    "name": "Raymond A.",
     "quote": "Professional service. Dr. Barnes took time to explain all my options. Would definitely recommend him to everyone seeking help.",
     "source": "Tebra patient survey",
     "date": "Jun 2026",
     "rating": 5
   },
   {
-    "quote": "Excellent doctor. He takes the time needed to answer all of my questions and explain everything in a way that is easy to understand.",
+    "name": "Joseph M.",
+    "quote": "Excellent doctor, takes the time needed to answer all of my questions and explain everything in a way that is easy to understand. Dr. Barnes is highly recommended!!",
     "source": "Tebra patient survey",
     "date": "Jun 2026",
     "rating": 5
   },
   {
-    "quote": "The office staff is excellent. Scott is great. Dr. Barnes is kind, professional, very competent, and listens intently.",
+    "name": "Paula D.",
+    "quote": "The office staff is excellent. Scott is great. Dr. Barnes is kind, professional, very competent, and listens intently. He offers treatment solutions to my needs.",
     "source": "Tebra patient survey",
     "date": "Jun 2026",
     "rating": 5
   },
   {
-    "quote": "One of the best doctors I’ve ever seen. He’s knowledgeable, informative, and recommends the treatment you’re most comfortable with.",
+    "name": "Patricia G.",
+    "quote": "One of the best doctors I’ve ever seen. He’s knowledgeable, informative and recommends the treatment you’re most comfortable with.",
     "source": "Tebra patient survey",
     "date": "May 2026",
     "rating": 5
   },
   {
+    "name": "Peter D.",
     "quote": "Outstanding care. Dr. Barnes is caring and competent. I trust him for all my care and treatment.",
     "source": "Tebra patient survey",
     "date": "May 2026",
     "rating": 5
   },
   {
+    "name": "Jon M.",
     "quote": "Great Dr. and super friendly!",
     "source": "Tebra patient survey",
     "date": "Apr 2026",
     "rating": 5
   },
   {
+    "name": "Alice D.",
     "quote": "Staff is very knowledgeable and Dr. Barnes is caring.",
     "source": "Tebra patient survey",
     "date": "Apr 2026",
     "rating": 5
   },
   {
+    "name": "Patient review",
     "quote": "Dr. Barnes is awesome. He explained everything every step of the way, including the process and what to expect.",
     "source": "Patient review",
     "date": "Apr 2024",
     "rating": 5
   },
   {
-    "quote": "Great doctor. He diagnosed me after hearing my history and sent me for tests and a plan of action for pain relief in my knee.",
+    "name": "Patient review",
+    "quote": "GREAT Dr. Diagnosed me after hearing my history and sent me for tests and a plan of action for pain relief in my knee.",
     "source": "Patient review",
     "date": "Jun 2024",
     "rating": 5
   },
   {
+    "name": "Patient review",
     "quote": "Dr. Barnes treated me for trigger finger and a cyst in the right hand. I experienced no pain during or after surgery and felt I was in good hands.",
     "source": "Patient review",
     "date": "Apr 2024",
     "rating": 5
   },
   {
-    "quote": "Explained all options and the procedure thoroughly. Great bedside manner, and great doctor.",
+    "name": "Patient review",
+    "quote": "Just had surgery to repair a torn meniscus on my right knee. Dr. Barnes explained all options and procedure thoroughly. Great bedside manner and great doctor.",
     "source": "Patient review",
     "date": "Mar 2024",
     "rating": 5
   },
   {
-    "quote": "Very knowledgeable and patient friendly. I highly recommend Dr. Barnes. He did a superb job on my knee.",
+    "name": "Awesome!",
+    "quote": "Dr. Barnes is awesome. Very knowledgeable and patient friendly. I highly recommend Dr. Barnes. We need more doctors like Dr. Barnes!",
     "source": "Patient review",
     "date": "Sep 2024",
     "rating": 5
   },
   {
+    "name": "Kevin W.",
     "quote": "From start to finish, he exemplified the highest standards of medical excellence. Dr. Barnes is, without a doubt, the best of the best.",
     "source": "Patient review",
     "date": "Sep 2024",
     "rating": 5
   },
   {
-    "quote": "He attended to a broken arm and tibia hardware removal. I really like his attitude and knowledge — good sense of humor too.",
+    "name": "Jackie A.",
+    "quote": "He attended to a broken arm and tibia hardware removal. I really like his attitude and knowledge. Good sense of humor too!",
     "source": "Patient review",
     "date": "Apr 2024",
     "rating": 5
   },
   {
-    "quote": "Since the first appointment, he has been so friendly and thoroughly explained options and procedure. Great bedside manner too.",
+    "name": "Jan P.",
+    "quote": "So glad to have him here and to be my doctor. He is friendly, thoroughly explains options and procedures, and has a great bedside manner.",
     "source": "Patient review",
     "date": "Mar 2024",
     "rating": 5
   },
   {
-    "quote": "Very thorough, professional, efficient, and caring. As a retired nurse, I am very picky about who I trust with my care.",
+    "name": "Rayleen S.",
+    "quote": "Dr. Barnes is very thorough, professional, efficient and caring. I am very picky about what medical professionals I will trust with my care.",
     "source": "Patient review",
     "date": "Mar 2023",
     "rating": 5

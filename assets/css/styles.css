@@ -232,3 +232,14 @@ section{padding:82px 0}.section-head{display:flex;align-items:end;justify-conten
 .review-section-actions{display:flex!important;gap:10px!important;flex-wrap:wrap!important;align-items:center!important;justify-content:flex-end!important}
 @media(max-width:1050px){.patient-review-cards{grid-template-columns:1fr!important}.dynamic-review-card{min-height:auto!important}.review-section-actions{justify-content:flex-start!important;margin-top:18px!important}}
 @media(max-width:700px){.dynamic-review-card{padding:24px!important}.dynamic-review-text{font-size:1.08rem!important;line-height:1.42!important}.review-section-actions .btn{width:100%;justify-content:center}}
+
+
+/* v70 brand/navigation + hand hero readability + named review cards */
+.hw-hero-points > div{display:grid!important;grid-template-columns:42px minmax(0,1fr)!important;gap:12px!important;align-items:center!important;min-height:94px!important;}
+.hw-hero-points > div > div{display:block!important;background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;box-shadow:none!important;min-width:0!important;}
+.hw-hero-points strong{font-size:clamp(1rem,1.15vw,1.2rem)!important;line-height:1.08!important;}
+.hw-hero-points em{font-size:.82rem!important;line-height:1.28!important;}
+@media(max-width:720px){.hw-hero-points > div{min-height:auto!important;}}
+.dynamic-review-author{display:block!important;line-height:1.35!important;}
+.patient-review-cards{grid-template-columns:repeat(3,minmax(320px,1fr))!important;}
+@media(max-width:1120px){.patient-review-cards{grid-template-columns:1fr!important;}}
