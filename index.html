@@ -144,10 +144,10 @@
 <section class="reviews patient-review-section" id="reviews">
 <div class="container">
 <div class="section-head review-section-head"><div><h2>Patient reviews matter.</h2><p>Real patient feedback helps new patients understand communication style, trust, and whether the care experience feels like the right fit.</p></div><div class="review-section-actions"><a class="btn btn-primary" href="https://www.tebra.com/care/provider/james-barnes-md-1083980585#reviews" rel="noopener" target="_blank">Read Patient Reviews</a><a class="btn btn-secondary" href="why-patients-choose-dr-barnes.html#reviews">Why Dr. Barnes</a></div></div>
-<div class="patient-review-cards" data-review-rotator>
-<article class="dynamic-review-card" data-review-card="0"><div class="stars">★★★★★</div><p class="dynamic-review-text">“Excellent Doctor, that takes the time needed to answer all of my questions.”</p><span class="dynamic-review-author">Tebra patient review</span></article>
-<article class="dynamic-review-card" data-review-card="1"><div class="stars">★★★★★</div><p class="dynamic-review-text">“Dr. Barnes is kind, professional, very competent and listens intently.”</p><span class="dynamic-review-author">Tebra patient review</span></article>
-<article class="dynamic-review-card" data-review-card="2"><div class="stars">★★★★★</div><p class="dynamic-review-text">“Professional service. Dr Barnes took time to explain all my options.”</p><span class="dynamic-review-author">Tebra patient review</span></article>
+<div class="patient-review-cards" data-review-rotator data-review-source="assets/data/reviews.json">
+<article class="dynamic-review-card" data-review-card="0"><div class="stars">★★★★★</div><p class="dynamic-review-text">“Best orthopedic surgeon in Havasu AZ. Easy to work with and explains options well. Thank you!!”</p><span class="dynamic-review-author">Tebra patient survey • Jun 2026</span></article>
+<article class="dynamic-review-card" data-review-card="1"><div class="stars">★★★★★</div><p class="dynamic-review-text">“Dr. Barnes came to my rescue. He is kind, funny, knowledgeable, and informative. 10/10 recommended Dr. Barnes!!!”</p><span class="dynamic-review-author">Tebra patient survey • Jun 2026</span></article>
+<article class="dynamic-review-card" data-review-card="2"><div class="stars">★★★★★</div><p class="dynamic-review-text">“Professional and personal service.”</p><span class="dynamic-review-author">Tebra patient survey • Jun 2026</span></article>
 </div>
 </div>
 </section><section id="local-care">
@@ -186,46 +186,72 @@
 })();
 </script>
 
+
 <script>
 (function(){
-  const reviewItems=[
-    {text:'“Excellent Doctor, that takes the time needed to answer all of my questions.”',author:'Tebra patient review'},
-    {text:'“Dr. Barnes is kind, professional, very competent and listens intently.”',author:'Tebra patient review'},
-    {text:'“Professional service. Dr Barnes took time to explain all my options.”',author:'Tebra patient review'},
-    {text:'“Outstanding care. Dr Barnes is caring and competent.”',author:'Tebra patient review'},
-    {text:'“He takes the time to explain everything.”',author:'Tebra patient review'},
-    {text:'“Professional and personal service.”',author:'Tebra patient review'},
-    {text:'“Great Dr. and super friendly!”',author:'Tebra patient review'},
-    {text:'“Staff is very knowledgeable and Dr Barnes is caring.”',author:'Tebra patient review'},
-    {text:'“Very patient friendly… Scott is amazing assistant.”',author:'Tebra patient review'}
+  const fallbackReviews = [
+    {quote:'Best orthopedic surgeon in Havasu AZ. Easy to work with and explains options well. Thank you!!',source:'Tebra patient survey',date:'Jun 2026',rating:5},
+    {quote:'Dr. Barnes came to my rescue. He is kind, funny, knowledgeable, and informative. 10/10 recommended Dr. Barnes!!!',source:'Tebra patient survey',date:'Jun 2026',rating:5},
+    {quote:'Professional and personal service.',source:'Tebra patient survey',date:'Jun 2026',rating:5},
+    {quote:'He takes the time to explain everything.',source:'Tebra patient survey',date:'Jun 2026',rating:5},
+    {quote:'Very patient friendly, also his office staff is friendly and considerate. Scott is an amazing assistant.',source:'Tebra patient survey',date:'Jun 2026',rating:5},
+    {quote:'Professional service. Dr. Barnes took time to explain all my options. Would definitely recommend him to everyone seeking help.',source:'Tebra patient survey',date:'Jun 2026',rating:5},
+    {quote:'Excellent doctor. He takes the time needed to answer all of my questions and explain everything in a way that is easy to understand.',source:'Tebra patient survey',date:'Jun 2026',rating:5},
+    {quote:'The office staff is excellent. Scott is great. Dr. Barnes is kind, professional, very competent, and listens intently.',source:'Tebra patient survey',date:'Jun 2026',rating:5},
+    {quote:'Outstanding care. Dr. Barnes is caring and competent. I trust him for all my care and treatment.',source:'Tebra patient survey',date:'May 2026',rating:5}
   ];
-  function setupReviewRotator(root){
+  function reviewKey(item){return (item.quote||'').trim().toLowerCase();}
+  function stars(n){return '★'.repeat(Math.max(1, Math.min(5, Number(n)||5)));}
+  function setCard(card,item){
+    const text=card.querySelector('.dynamic-review-text');
+    const author=card.querySelector('.dynamic-review-author');
+    const star=card.querySelector('.stars');
+    if(!text||!author) return;
+    text.classList.add('fade-out'); author.classList.add('fade-out');
+    setTimeout(()=>{
+      text.textContent='“'+(item.quote||'')+'”';
+      author.textContent=[item.source||'Patient review', item.date||''].filter(Boolean).join(' • ');
+      if(star) star.textContent=stars(item.rating);
+      text.classList.remove('fade-out'); author.classList.remove('fade-out');
+    },260);
+  }
+  async function loadReviews(root){
+    const src=root.getAttribute('data-review-source')||'assets/data/reviews.json';
+    try{
+      const res=await fetch(src,{cache:'no-store'});
+      if(!res.ok) throw new Error('reviews unavailable');
+      const data=await res.json();
+      return Array.isArray(data)&&data.length?data:fallbackReviews;
+    }catch(e){return fallbackReviews;}
+  }
+  async function setupReviewRotator(root){
     const cards=[...root.querySelectorAll('[data-review-card]')];
     if(!cards.length) return;
-    let nextIndex=cards.length % reviewItems.length;
+    const items=(await loadReviews(root)).filter(r=>r&&r.quote);
+    if(!items.length) return;
+    const visible=[];
+    cards.forEach((card,i)=>{const item=items[i%items.length]; visible[i]=reviewKey(item); setCard(card,item);});
+    let nextIndex=cards.length % items.length;
     let cardIndex=0;
-    function setCard(card,item){
-      const text=card.querySelector('.dynamic-review-text');
-      const author=card.querySelector('.dynamic-review-author');
-      if(!text||!author) return;
-      text.classList.add('fade-out');
-      author.classList.add('fade-out');
-      setTimeout(()=>{
-        text.textContent=item.text;
-        author.textContent=item.author;
-        text.classList.remove('fade-out');
-        author.classList.remove('fade-out');
-      },260);
+    function nextNonDuplicate(){
+      for(let tries=0; tries<items.length; tries++){
+        const item=items[nextIndex % items.length];
+        nextIndex=(nextIndex+1)%items.length;
+        const key=reviewKey(item);
+        if(!visible.includes(key)) return item;
+      }
+      return null;
     }
     function rotateOne(){
+      const item=nextNonDuplicate();
+      if(!item) return;
       const card=cards[cardIndex];
-      const item=reviewItems[nextIndex];
+      visible[cardIndex]=reviewKey(item);
       setCard(card,item);
       cardIndex=(cardIndex+1)%cards.length;
-      nextIndex=(nextIndex+1)%reviewItems.length;
     }
-    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      setInterval(rotateOne,3600);
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && items.length>cards.length){
+      setInterval(rotateOne,5200);
     }
   }
   document.querySelectorAll('[data-review-rotator]').forEach(setupReviewRotator);
