@@ -1,92 +1,120 @@
 [
- {
-  "name": "Jeffrey C.",
-  "quote": "Dr Barnes has turned out to be one of the best doctors I have ever been with. He has a great bedside manner and is very talented. His office staff I give 10 stars out of 5 because 5 isn’t enough. I have been coming from California to use Dr Barnes because he is worth the drive and time. His work on my knee was second to none and he made me feel 100% confident that I would in fact be back to normal. Dr Barnes is fantastic.",
-  "source": "Tebra Care Profile",
-  "date": "Jun 22, 2026",
-  "rating": 5
-  }
+  {
+    "name": "Joseph L.",
+    "quote": "So far, so good. I have believed from experience, this guy is a pro. His staff follows suit.",
+    "source": "Tebra patient review",
+    "date": "Jun 23, 2026",
+    "rating": 5
+  },
+  {
+    "name": "Keith M.",
+    "quote": "Dr Barnes is truly a compassionate and caring physician I highly recommend him to everyone who needs orthopedic care",
+    "source": "Tebra patient review",
+    "date": "Jun 23, 2026",
+    "rating": 5
+  },
+  {
+    "name": "Raymond A.",
+    "quote": "Professional and friendly service. Dr Barnes definitely cares about his patients. Would highly recommend him.",
+    "source": "Tebra patient review",
+    "date": "Jun 22, 2026",
+    "rating": 5
+  },
+  {
+    "name": "Joanne H.",
+    "quote": "Great staff..great doctor!",
+    "source": "Tebra patient review",
+    "date": "Jun 22, 2026",
+    "rating": 5
+  },
+  {
+    "name": "Jeffrey C.",
+    "quote": "Dr Barnes has turned out to be one of the best doctors I have ever been with. He has a great bedside manner and is very talented. His office staff I give 10 stars out of 5 because 5 isn’t enough. I have been coming from California to use Dr Barnes because he is worth the drive and time. His work on my knee was second to none and he made me feel 100% confident that I would in fact be back to normal. Dr Barnes is fantastic.",
+    "source": "Tebra patient review",
+    "date": "Jun 22, 2026",
+    "rating": 5
+  },
   {
     "name": "Barry R.",
     "quote": "Best orthopedic surgeon in Havasu AZ. Easy to work with and explains options well. Thank you!!",
-    "source": "Tebra patient survey",
+    "source": "Tebra patient review",
     "date": "Jun 2026",
     "rating": 5
   },
   {
     "name": "Regina C.",
     "quote": "Dr. Barnes came to my rescue. He is kind, funny, knowledgeable, and informative. 10/10 recommended Dr. Barnes!!!",
-    "source": "Tebra patient survey",
+    "source": "Tebra patient review",
     "date": "Jun 2026",
     "rating": 5
   },
   {
     "name": "Raymond A.",
     "quote": "Professional and personal service.",
-    "source": "Tebra patient survey",
+    "source": "Tebra patient review",
     "date": "Jun 2026",
     "rating": 5
   },
   {
     "name": "Michael B.",
     "quote": "He takes the time to explain everything.",
-    "source": "Tebra patient survey",
+    "source": "Tebra patient review",
     "date": "Jun 2026",
     "rating": 5
   },
   {
     "name": "Roxana H.",
     "quote": "Very patient friendly, also his office staff is friendly and considering. Scott is an amazing assistant.",
-    "source": "Tebra patient survey",
+    "source": "Tebra patient review",
     "date": "Jun 2026",
     "rating": 5
   },
   {
     "name": "Raymond A.",
     "quote": "Professional service. Dr. Barnes took time to explain all my options. Would definitely recommend him to everyone seeking help.",
-    "source": "Tebra patient survey",
+    "source": "Tebra patient review",
     "date": "Jun 2026",
     "rating": 5
   },
   {
     "name": "Joseph M.",
     "quote": "Excellent doctor, takes the time needed to answer all of my questions and explain everything in a way that is easy to understand. Dr. Barnes is highly recommended!!",
-    "source": "Tebra patient survey",
+    "source": "Tebra patient review",
     "date": "Jun 2026",
     "rating": 5
   },
   {
     "name": "Paula D.",
     "quote": "The office staff is excellent. Scott is great. Dr. Barnes is kind, professional, very competent, and listens intently. He offers treatment solutions to my needs.",
-    "source": "Tebra patient survey",
+    "source": "Tebra patient review",
     "date": "Jun 2026",
     "rating": 5
   },
   {
     "name": "Patricia G.",
     "quote": "One of the best doctors I’ve ever seen. He’s knowledgeable, informative and recommends the treatment you’re most comfortable with.",
-    "source": "Tebra patient survey",
+    "source": "Tebra patient review",
     "date": "May 2026",
     "rating": 5
   },
   {
     "name": "Peter D.",
     "quote": "Outstanding care. Dr. Barnes is caring and competent. I trust him for all my care and treatment.",
-    "source": "Tebra patient survey",
+    "source": "Tebra patient review",
     "date": "May 2026",
     "rating": 5
   },
   {
     "name": "Jon M.",
     "quote": "Great Dr. and super friendly!",
-    "source": "Tebra patient survey",
+    "source": "Tebra patient review",
     "date": "Apr 2026",
     "rating": 5
   },
   {
     "name": "Alice D.",
     "quote": "Staff is very knowledgeable and Dr. Barnes is caring.",
-    "source": "Tebra patient survey",
+    "source": "Tebra patient review",
     "date": "Apr 2026",
     "rating": 5
   },
