@@ -1,5 +1,82 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1448 1086" role="img" aria-labelledby="title desc">
   <title id="title">Stages of bone fracture healing</title>
   <desc id="desc">Orthopedic education illustration showing fracture, early callus, hard callus, and remodeling stages of bone healing.</desc>
-  <image href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFQzc4S0lYUmxNTXx8N0pDRkr/2wBDAQwNDREPESESESFFKCYpRUdFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAN+Ba8DASIAAhEBAxEB/8QAGwABAQEBAQEBAQAAAAAAAAAAAAECAwQFBgf/xAA3EAACAQMDAgQEBQMEAwAAAAAAAQIDEQQhMQUSQVEGEyJhcYEykaGx8BQjQsHR4fEHI1JiM//EABoBAQEBAQEBAQAAAAAAAAAAAAABAgMEBQb/xAAtEQACAgEDAwIFBQAAAAAAAAAAAQIRAxIhMQQTQVEiYXGBkaGx8AUyQtH/2gAMAwEAAhEDEQA/APoIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/Z" width="1448" height="1086" preserveAspectRatio="xMidYMid meet" />
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef7ff"/></linearGradient>
+    <linearGradient id="bone" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3d8"/><stop offset="0.45" stop-color="#e9c993"/><stop offset="1" stop-color="#b98245"/></linearGradient>
+    <linearGradient id="cortex" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8e8"/><stop offset="1" stop-color="#d9ad70"/></linearGradient>
+    <linearGradient id="callusSoft" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd2c8"/><stop offset="1" stop-color="#d97968"/></linearGradient>
+    <linearGradient id="callusHard" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1cd"/><stop offset="1" stop-color="#d8ab68"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0b1f3a" flood-opacity="0.13"/></filter>
+    <pattern id="trabeculae" width="44" height="44" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="12" r="5" fill="none" stroke="#9b6a37" stroke-width="2" opacity="0.55"/>
+      <circle cx="28" cy="24" r="7" fill="none" stroke="#9b6a37" stroke-width="2" opacity="0.45"/>
+      <path d="M3 37 C13 29 22 41 41 30 M8 4 C17 18 26 6 40 16" fill="none" stroke="#9b6a37" stroke-width="2" opacity="0.35"/>
+    </pattern>
+    <style>
+      .label{font-family:Inter,Arial,sans-serif;font-weight:900;fill:#0b1f3a;font-size:38px}.time{font-family:Inter,Arial,sans-serif;font-style:italic;fill:#1e5bd8;font-size:28px}.num{font-family:Inter,Arial,sans-serif;font-weight:900;fill:white;font-size:40px}.small{font-family:Inter,Arial,sans-serif;fill:#64748b;font-size:22px}.arrow{fill:#86b7ef}.badge{fill:#1e91e6;stroke:#ffffff;stroke-width:8;filter:url(#shadow)}
+    </style>
+  </defs>
+  <rect width="1448" height="1086" fill="url(#bg)"/>
+  <circle cx="95" cy="96" r="180" fill="#dff7fb" opacity="0.35"/>
+  <circle cx="1340" cy="1020" r="220" fill="#dbeafe" opacity="0.45"/>
+  <path d="M0 977 C220 918 390 1046 620 986 C860 924 1058 940 1448 885 L1448 1086 L0 1086 Z" fill="#dcefff" opacity="0.75"/>
+
+  <g id="stage1" filter="url(#shadow)">
+    <path d="M126 162 C114 235 119 310 128 388 L136 463 L105 525 L141 569 L132 682 C124 762 124 820 143 895 L238 895 C250 820 250 764 242 682 L234 586 L283 542 L241 496 L230 386 C222 308 229 232 216 162 C196 137 148 137 126 162Z" fill="url(#cortex)"/>
+    <path d="M162 180 C151 272 158 358 168 454 L171 481 L145 528 L176 560 L171 681 C167 750 167 814 178 872 L202 872 C213 812 213 752 208 681 L202 579 L248 540 L207 501 L201 454 C190 356 198 271 188 180Z" fill="url(#bone)" opacity="0.75"/>
+    <path d="M164 187 C151 278 158 358 168 452 L172 482 L145 528 L177 558 L172 678 C168 750 168 815 178 870 L202 870 C212 811 213 750 208 678 L201 578 L247 540 L208 501 L201 452 C190 355 198 277 187 187Z" fill="url(#trabeculae)" opacity="0.9"/>
+    <path d="M111 504 L158 492 L207 512 L257 499" stroke="#7a3b16" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <path d="M116 562 L164 548 L206 567 L272 546" stroke="#7a3b16" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <path d="M105 526 L141 569" stroke="#fff" stroke-width="18" opacity="0.9"/>
+    <path d="M234 586 L283 542" stroke="#fff" stroke-width="18" opacity="0.9"/>
+  </g>
+
+  <path class="arrow" d="M338 504 l42 42 -42 42 16 16 58 -58 -58 -58z" opacity="0.9"/>
+
+  <g id="stage2" filter="url(#shadow)">
+    <path d="M458 162 C446 238 451 320 461 410 L470 498 C430 525 427 576 470 604 L462 694 C454 768 455 823 474 895 L569 895 C581 821 582 766 574 694 L566 604 C607 576 606 525 566 498 L555 410 C545 319 552 239 540 162 C520 137 480 137 458 162Z" fill="url(#cortex)"/>
+    <path d="M493 184 C482 278 491 367 501 462 L505 505 C484 525 480 576 506 598 L501 684 C496 756 496 816 507 872 L534 872 C544 812 545 754 540 684 L535 598 C562 574 558 526 536 506 L530 462 C520 366 529 277 518 184Z" fill="url(#trabeculae)" opacity="0.9"/>
+    <path d="M431 500 C476 459 553 461 601 503 C633 535 624 584 588 610 C543 642 471 640 429 606 C394 578 399 529 431 500Z" fill="url(#callusSoft)" opacity="0.96"/>
+    <path d="M450 530 C488 512 538 512 580 532" stroke="#f6b3a7" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+    <path d="M454 585 C502 603 545 600 588 579" stroke="#b75046" stroke-width="8" stroke-linecap="round" opacity="0.55"/>
+  </g>
+
+  <path class="arrow" d="M674 504 l42 42 -42 42 16 16 58 -58 -58 -58z" opacity="0.9"/>
+
+  <g id="stage3" filter="url(#shadow)">
+    <path d="M791 162 C779 238 785 320 795 410 L804 494 C768 522 765 582 804 613 L796 694 C788 768 789 823 808 895 L903 895 C915 821 916 766 908 694 L900 613 C939 581 936 522 900 494 L889 410 C879 319 886 239 874 162 C854 137 813 137 791 162Z" fill="url(#cortex)"/>
+    <path d="M827 184 C816 278 824 367 835 462 L839 501 C820 527 818 578 840 604 L835 684 C830 756 830 816 841 872 L868 872 C878 812 879 754 874 684 L869 604 C891 577 889 528 870 502 L864 462 C854 366 862 277 852 184Z" fill="url(#trabeculae)" opacity="0.9"/>
+    <path d="M773 499 C815 452 898 452 940 500 C980 545 960 624 908 647 C859 668 792 653 764 610 C742 576 746 530 773 499Z" fill="url(#callusHard)" opacity="0.98"/>
+    <g fill="#b98245" opacity="0.55"><circle cx="814" cy="540" r="12"/><circle cx="876" cy="523" r="10"/><circle cx="910" cy="582" r="13"/><circle cx="842" cy="612" r="9"/><circle cx="800" cy="590" r="8"/></g>
+    <path d="M785 552 C835 525 889 527 930 554 M788 610 C834 639 886 635 931 604" stroke="#fff2cf" stroke-width="9" stroke-linecap="round" opacity="0.8"/>
+  </g>
+
+  <path class="arrow" d="M1010 504 l42 42 -42 42 16 16 58 -58 -58 -58z" opacity="0.9"/>
+
+  <g id="stage4" filter="url(#shadow)">
+    <path d="M1125 162 C1113 238 1119 320 1129 410 L1140 520 C1148 605 1139 703 1131 795 C1127 835 1130 868 1143 895 L1238 895 C1250 821 1251 766 1243 694 L1234 606 C1227 536 1226 477 1222 410 C1212 319 1219 239 1207 162 C1187 137 1147 137 1125 162Z" fill="url(#cortex)"/>
+    <path d="M1161 184 C1150 278 1158 367 1169 462 L1176 534 C1182 607 1175 720 1169 812 C1167 836 1170 856 1175 872 L1202 872 C1212 812 1213 754 1208 684 L1201 604 C1195 548 1199 509 1198 462 C1188 366 1196 277 1186 184Z" fill="url(#trabeculae)" opacity="0.9"/>
+    <path d="M1136 510 C1160 526 1197 526 1225 510" stroke="#e8c58e" stroke-width="16" stroke-linecap="round" opacity="0.55"/>
+    <path d="M1144 574 C1171 586 1196 586 1221 574" stroke="#f7e4bd" stroke-width="12" stroke-linecap="round" opacity="0.75"/>
+  </g>
+
+  <g id="timeline">
+    <path d="M150 932 H1298" stroke="#2b91dc" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
+    <path d="M1298 932 l34 -18 v36z" fill="#2b91dc"/>
+    <circle class="badge" cx="189" cy="932" r="42"/><text class="num" x="177" y="946">1</text>
+    <circle class="badge" cx="522" cy="932" r="42"/><text class="num" x="510" y="946">2</text>
+    <circle class="badge" cx="856" cy="932" r="42"/><text class="num" x="844" y="946">3</text>
+    <circle class="badge" cx="1190" cy="932" r="42"/><text class="num" x="1178" y="946">4</text>
+    <circle cx="356" cy="932" r="9" fill="#ffffff" stroke="#2b91dc" stroke-width="5"/><circle cx="689" cy="932" r="9" fill="#ffffff" stroke="#2b91dc" stroke-width="5"/><circle cx="1023" cy="932" r="9" fill="#ffffff" stroke="#2b91dc" stroke-width="5"/>
+  </g>
+  <text class="label" x="100" y="1015">Fracture</text>
+  <text class="label" x="421" y="1015">Early Callus</text>
+  <text class="time" x="438" y="1050">days to weeks</text>
+  <text class="label" x="748" y="1015">Hard Callus</text>
+  <text class="time" x="795" y="1050">weeks</text>
+  <text class="label" x="1091" y="1015">Remodeling</text>
+  <text class="time" x="1137" y="1050">months</text>
+  <g transform="translate(42 878)"><circle cx="44" cy="44" r="44" fill="#fff" stroke="#cfe7fb" stroke-width="5"/><rect x="24" y="25" width="40" height="42" rx="5" fill="none" stroke="#2692dc" stroke-width="5"/><path d="M24 39 H64 M34 20 V31 M54 20 V31" stroke="#2692dc" stroke-width="5" stroke-linecap="round"/></g>
+  <g transform="translate(1320 878)"><circle cx="44" cy="44" r="44" fill="#fff" stroke="#cfe7fb" stroke-width="5"/><circle cx="44" cy="44" r="24" fill="none" stroke="#2692dc" stroke-width="5"/><path d="M44 29 V45 L57 56" stroke="#2692dc" stroke-width="5" stroke-linecap="round"/></g>
 </svg>
