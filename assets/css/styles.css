@@ -3,6 +3,7 @@
 /* v71 site-wide header menu icons
    Adds lightweight, consistent visual cues to the hard-coded navigation across all pages that load this stylesheet. */
 .nav-links a,.nav-links .dropbtn{display:inline-flex;align-items:center;gap:7px;line-height:1.1}
+.dropdown-menu a{display:flex!important;align-items:center;gap:8px;width:100%}
 .nav-links a::before,.nav-links .dropbtn::before{display:inline-flex;align-items:center;justify-content:center;width:1.35em;min-width:1.35em;height:1.35em;border-radius:999px;background:rgba(39,199,255,.12);border:1px solid rgba(39,199,255,.22);font-size:.95em;line-height:1;box-shadow:0 6px 14px rgba(7,29,73,.06)}
 .nav-links a:hover::before,.nav-links .dropdown:hover .dropbtn::before,.nav-links .dropdown.open .dropbtn::before{background:rgba(39,199,255,.22);border-color:rgba(39,199,255,.42)}
 .nav-links>a[href="index.html"]::before{content:"🏠"}
@@ -20,10 +21,12 @@
 .dropdown-menu a[href="foot-ankle.html"]::before{content:"👣"}
 .dropdown-menu a[href="hand.html"]::before{content:"✋"}
 .dropdown-menu a[href="orthobiologics.html"]::before{content:"🧬"}
+.dropdown-menu a[href="locations.html"]::before{content:"📍"}
 .dropdown-menu a[href="physical-therapy.html"]::before{content:"🏋️"}
 .dropdown-menu a[href="sports-injury-advice.html"]::before{content:"🩹"}
 .dropdown-menu a[href="sports-recovery.html"]::before{content:"🔁"}
 .dropdown-menu a[href*="reviews"]::before{content:"💬"}
+.dropdown-menu a[href="the-bone-blog.html"]::before{content:"✍️"}
 .dropdown-menu a[href="why-patients-choose-dr-barnes.html"]::before{content:"⭐"}
 .dropdown-menu a[href="lake-havasu-orthopedic-surgeon.html"]::before{content:"🌵"}
 .dropdown-menu a[href*="#story"]::before{content:"📖"}
